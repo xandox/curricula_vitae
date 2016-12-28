@@ -1,0 +1,153 @@
+% LaTeX source of my resume
+% =========================
+
+% Commented for easy reuse... ;)
+
+% See the `README.md` file for more info.
+
+% This file is licensed under the CC-NC-ND Creative Commons license.
+
+
+% Start a document with the here given default font size and paper size.
+\documentclass[10pt,a4paper]{article}
+
+% Set the page margins.
+\usepackage[a4paper,margin=0.75in]{geometry}
+
+% Setup the language.
+\usepackage[english]{babel}
+\hyphenation{Some-long-word}
+
+% Makes resume-specific commands available.
+\usepackage{resume}
+
+
+
+
+\begin{document}  % begin the content of the document
+\sloppy  % this to relax whitespacing in favour of straight margins
+
+
+% title on top of the document
+\maintitle{Ilya Arzhannikov}{November 03, 1984}{Last update on \today}
+
+\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+
+% \noindent prevents paragraph's first lines from indenting
+% \mbox is used to obfuscate the email address
+% \sbull is a spaced bullet
+% \href well..
+% \\ breaks the line into a new paragraph
+\noindent\href{mailto:iarzhannikov@gmail.com}{iarzhannikov\mbox{}@\mbox{}gmail.com}\sbull
+\textsmaller{+}7(963)675-44-49\sbull
+\href{https://www.linkedin.com/in/%D0%B0%D1%80%D0%B6%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-%D0%B8%D0%BB%D1%8C%D1%8F-8a125b37/en}{linkedin.com}
+\\
+Pobedi square 2k1 - 219\sbull
+121170\sbull
+Moscow\sbull
+Russia
+
+\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertical spacing before and after
+
+\roottitle{Summary}  % a root section title
+
+\vspace{-1.3em}  % some vertical spacing
+\begin{multicols}{2}  % open a multicolumn environment
+\noindent
+I am an experienced and highly skilled C++ software engineer and seek to further develop my skills in a challenging position. I am analytical and methodical with strong problem solving skills, tempered with commercial realism. My primary experience has been working on real-time, multithreaded systems, with a focus on scalability and performance.
+\end{multicols}
+
+
+\spacedhrule{0em}{-0.4em}
+
+\roottitle{Experience}
+
+\headedsection
+  {\href{https://www.yandex.com/}{Yandex}}
+  {\textsc{Yekaterinburg, Russia}} {%
+  \headedsubsection
+    {Software Engineer, C++, Dynamic crawler.}
+    {May \apo14 -- August \apo15}
+    {\bodytext{The main point of dynamic crawler is to run JavaScript on html-page for catch AJAX data whichcan’t be downloaded by original crawler. My task is to predict – will there be new data and how much? My part of this system look at new html page that spider have downloaded and give the changes probability. For model fitting I wrote scalable system that crawl Internet, run JS on pages and calculate some aggregations on data. For comparing two pages (html-without-ran-JavaScript and html-with-ran-JavaScript) I made couple of functions. That functions are model answer.}\keywords{C++, Python, Matrixnet, Machine learning, MapReduce, Linux}}
+  \headedsubsection
+    {Software Engineer, C++, Crawler.}
+    {September \apo13 -- May \apo14}
+    {\bodytext{I have developed new factors for matrixnet-models. I have done a system for fitting/refitting and deploying matrixnet-models with only one click. Before this there was vary long hand-process for deploying new refitted models with system restarting and so on. Now all refitting-deploying process humanless, take for couple hours and absolutely online.}\keywords{C++, Python, Matrixnet, Machine learning, MapReduce, Linux}}
+  \headedsubsection
+    {Software Engineer, C++, Mesh project.}
+    {May \apo13 -- September \apo13}
+    {\bodytext{Mesh is a system like Google Pragel. I have developed cooperative task scheduler on info about available resources (memory, CPU, disk usage). And I have done the system for functional testing.}\keywords{C++, Python, Linux}}
+}
+
+\headedsection
+  {\href{https://kontur.ru/eng/about}{SKB Kontur}}
+  {\textsc{Yekaterinburg, Russia}} {%
+  \headedsubsection
+    {Software Developer, Erlang, Kontur-Expert.}
+    {June \apo11 -- May \apo13}
+    {\bodytext{Project for bookkeepers. It allows to estimate financial condition, creditworthiness, the probability of bankruptcy and etc. It was developed with Agile methodology. My zone of responsibility was back end.}\keywords{Erlang, Linux, Agile}}
+  \headedsubsection
+    {Software Developer, C\#, Kontur-Extern.}
+    {July \apo08 -- June \apo11}
+    {\bodytext{Kontur-Extern is a huge high-load project for passing any reporting (tax, financial and so on) to public institutions by Internet. I stabilized code, developed new subservices. I did common authentication and authorization system for all SKB Kontur products and did generic index service on Google File System like system.}\keywords{C\#, Windows Server 2003, Windows Server 2008}}
+}
+
+\headedsection
+  {\href{http://www.rc-spectr.ru/}{Spectr}}
+  {\textsc{Yekaterinburg, Russia}} {%
+  \headedsubsection
+    {Software Developer, C++, 3D engine for automobile- and loco-simulator.}
+    {June \apo05 -- July \apo08}
+    {\bodytext{I did utilitarian part of 3D engine which includes: editors, import 3DMax models, configuration and calibration of special hardware.}\keywords{C++, Qt, Direct3D, Lua, Linux, Windows}}
+}
+
+\spacedhrule{0.5em}{-0.4em}
+
+\roottitle{Pet projects}
+
+\headedsection
+  {\href{http://billijet.ru/}{Billijet}}
+  {\textsc{Yekaterinburg, Russia}} {%
+  \headedsubsection
+    {Software Developer, C++}
+    {2012 -- 2013}
+    {\bodytext{It would have to be android-cueist. We (I and one more guy) have done prototype that can not move around a table but can detect a boll and hit it. We represented it on \href{http://www.innoprom.com/en/}{INNOPROM} but did not find investors.}\keywords{C++, Qt, OpenCV, Linux, Andurino}}
+}
+
+\spacedhrule{0.5em}{-0.4em}
+
+\roottitle{Skills}
+
+\inlineheadsection  % special section that has an inline header with a 'hanging' paragraph
+  {Technical spceialties:}
+  {Software design and implementation, with(in) a team. Strong knowledge of C++/C\#/Erlang, I use bash and python for automation regularly. Good knowledge of web technology: HTML+CSS, REST \& JavaScript (jQuery).}
+
+\vspace{0.5em}
+\inlineheadsection
+  {Natural languages:}
+  {Russian \emph{(native)}, English \emph{(intermediate)}.}
+
+
+\spacedhrule{1.6em}{-0.4em}
+
+\roottitle{Interests}
+
+\inlineheadsection
+  {}
+  {Probability theory, statistics, machine learning, computer vision. Science fiction and fantasy.}
+
+\spacedhrule{1.6em}{-0.4em}
+
+\roottitle{Education}
+
+\headedsection
+  {Ural state university.}
+  {\textsc{Yekaterinburg, Russia}} {%
+  \headedsubsection
+    {Mathematics and Mechanics department}
+    {Not graduated}
+    {\bodytext{}}
+}
+
+
+\end{document}
